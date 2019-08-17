@@ -101,6 +101,7 @@ class Model(object):
         Kalpha = self.K * self.alpha
 
         for k in xrange(self.K):
+            # 这里可以得到一个数字, 循环K次得到每个topic的概率
             self.p[k] = (self.nw[wid][k] + self.beta)/(self.nwsum[k] + Vbeta) * \
                         (self.nd[i][k] + alpha)/(self.ndsum[i] + Kalpha)
         for k in range(1, self.K):
